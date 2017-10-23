@@ -7,27 +7,47 @@ This is similar to the https://en.wikipedia.org/wiki/Nurse_scheduling_problem[Nu
 The goal is to schedule duty for participants in a fair way, where each participants are only available some of the time, and each participant is only allowed to have a maximum of one duty per day.
 
 
+=== Overview
+The application has three tabs:
+. Availability
+. Schedule
+. Summary (optional, may show some totals)
+. Settings (for Admin only)
+
+
 === Usage
 
-. Click "Login to Google" to access calendar information.
-. Enter availability of persons on the Availability tab.
-. Enter:
+==== For Admin
+. Click "Login using Google" to access the application
+. On "Settings" tab, enter:
 .. scheduling dates (FROM, TO)
-.. how many duties per day (TIME and NUMBER)
-.. number of iterations to calculate
-. Once the schedule is created, display it
-. Click "Send to Google Calendar" to store it at the linked Google Calendar
+.. how many duties per day (NUMBER)
+.. define algorithm precision (TODO this is yet discussed)
+. Click "Create schedule"
+. Once the schedule is created, display it (is this step really needed? Would you like to have an ability to manually edit the schedule? Or you would like to be sure in what you are posting and change algorithm settings in case?)
+. Click "Send to Google Calendar" to **publish** it at the users' Google Calendars
 
+==== For User
+. Click "Login using Google" to access the application
+. Enter or change user's availability using our representation of calendar with checkboxes next to each day (important: this will require central database for storing availability)
+. Click "Create (Update) Schedule" to save the changes and update the schedule
+. View user's schedule on the "Schedule" tab
+. Get link to user's Google Calendar, where schedule and availability would be displayed
 
 
 === Google Calendar Integration
 
 Google Calendar is used to:
 
-* store availability of participants (in a calendar called "availability")
-* share the duty calendar to participants (in a calendar called "duty-current")
-* a backup duty calendar to participants (in a calendar called "duty-previous")
+* NOT store availability of participants (in a calendar called "availability"), BECAUSE
+.. it's hard to add and remove availability for user, checkboxes work far better
+.. **I did not yet find an option to show "only your events" on the calendar. Therefore events from other 200+ users would be always visible, which will bloat the calendar and make it unusable**
+.. also, every user would see availability of others and change it, which is not secure
+.. same for duty calendar. It will show duties for other users as well, not for single user
+.. adding new user would require admin to add access rights, which is not very user friendly (10+ seconds per user)
+.. PS: instead, adding user's to a file would be enough
 
+* As a result, Google Calendar is useful only for displaying and sharing availability / duties, not for managing them.
 
 
 === Definitions
