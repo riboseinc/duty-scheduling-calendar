@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<title>DutyCal</title>		
+		<link rel="stylesheet" type="text/css" href="css/style.css" />	       
+    </head>
+
+	<body>
+        <link href="http://fonts.googleapis.com/css?family=Cabin:400,500,600,bold" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=PT+Sans+Narrow:regular,bold" rel="stylesheet" type="text/css">       
+        <div class="framee">
+            <div class="clear">
+                Input data
+                <input type="file" id="fileinput" class="cool-one valid"/>
+                <br /> <br />
+                Time Limit
+                <input type="text" id="txtLimit" placeholder="sec" class="cool-one2 valid" value="3">
+            </div>
+            <div class="ph-clear"></div>
+            <a class="button" onclick="solve()">
+                <span>solve</span>
+            </a>
+            <textarea id="result" class="textareaa" rows="40" cols="110"></textarea>
+        </div>       
+         
+        <script src="js/duty_scheduling.js"></script>
+</body>
+</html>

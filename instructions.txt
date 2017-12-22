@@ -1,0 +1,20 @@
+Data format is the following:
+
+NMB_PERSONS
+NMB_DAYS
+DEMAND_FOR_DAY_0 LIST_OF_PERSONs_AVAILABLE_ON_DAY_0
+DEMAND_FOR_DAY_1 LIST_OF_PERSONs_AVAILABLE_ON_DAY_1
+DEMAND_FOR_DAY_2 LIST_OF_PERSONs_AVAILABLE_ON_DAY_2
+...
+...
+DEMAND_FOR_DAY_D LIST_OF_PERSONs_AVAILABLE_ON_DAY_D
+
+For example,
+
+5
+3
+2 0 1 2 3
+3 1 2 3 4
+4 0 1 2 3 4
+
+represents the data with 5 persons and 3 days. Two duties are required for the first day and persons available on this day are the first four persons (0, 1, 2 and 3)...
